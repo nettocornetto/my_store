@@ -1,16 +1,44 @@
 development:
   adapter: postgresql
-  database: my_database_development
+  encoding: unicode
+  database: metals-directory_development
   pool: 5
-  timeout: 5000
-test:
+  username:
+  password:
+  template: template0
+  host: localhost
+  port: 5432
+
+test: &test
   adapter: postgresql
-  database: my_database_test
+  encoding: unicode
+  database: metals-directory_test
   pool: 5
-  timeout: 5000
+  username:
+  password:
+  template: template0
+  host: localhost
+  port: 5432
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: metals-directory_production
+  pool: 5
+  username:
+  password:
+  template: template0
+  host: localhost
 
 production:
   adapter: postgresql
-  database: my_database_production
+  encoding: unicode
+  database: metals-directory_production
   pool: 5
-  timeout: 5000
+  username:
+  password:
+  template: template0
+  host: localhost
+
+cucumber:
+  <<: *test

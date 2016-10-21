@@ -1,0 +1,257 @@
+  <head>
+    <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+  </head>
+
+  <style>
+  body {
+    background:#231f22;
+    font-family: MyriadPro-Cond;
+    font-size: 18px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  }
+
+  #logo_home { display: block;
+  }
+
+  .logo_home {
+    width: 100%;
+    padding:  0 30px;
+    outline:  none;
+  }
+
+  .center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 25%;
+}
+
+  .visible-lg {
+      display: block!important;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+  }
+
+  nav ul li {
+    float: left;
+    vertical-align: top;
+    padding: 0;
+    position: relative;
+    -webkit-transition: all ease 0.5s;
+}
+
+  nav ul li a {
+      color: #716d6e;
+      display: block;
+      padding: 0 40px;
+      overflow: hidden;
+      font-size: 1em;
+      text-decoration:  none;
+  }
+
+  .wrapper.logo_sm {
+    display:  none;
+    opacity:  1;
+    outline: none;
+  }
+
+  .wrapper.logo_sm img{
+    border-radius:  50%;
+  }
+
+  @media (max-height: 768px)
+  .slide_bg {
+      max-height: 400px;
+  }
+  .slide_bg {
+      width: 100%;
+      margin-top: 10px;
+      position: relative;
+      max-height: 550px;
+      overflow: hidden;
+  }
+
+  .heading_wrap {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.heading_wrap {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.textShadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.heading_wrap h1 {
+    font-family: 'Helvetica Neue LT Std';
+    font-size: 2em;
+    text-decoration: none;
+}
+
+h1 {
+    color: #F4F4F4;
+    margin: 0 0 10px 0;
+}
+
+.heading_wrap h4 {
+    font-family: 'Helvetica Neue LT Std';
+    font-size: 1em;
+}
+
+h4 {
+    color: #F4F4F4;
+    margin: 0 0 10px 0;
+  }
+
+
+</style>
+
+<body>
+  <div id="logo_home">
+    <div class="logo_home">
+      <%= image_tag "/images/logohome.png", :class =>"img-responsive center-block" %>
+    </div>
+  </div>
+
+  <div class="wrapper logo_sm">
+    <img class="center-block" src="/images/crown.jpg" width="10%">
+  </div>
+
+  <div class="slide_bg" id="folio" style="display: none; opacity: 1;">
+    <div class="image"><img src="http://placekitten.com/500/100" style="width:100%"></div>
+    <div class="heading_wrap textShadow">
+        <h1>SENSUAL AND INTIMATE TO THE TOUCH</h1>
+          <h4>GET YOUR EXPERIENCE RIGHT NOW</h4>
+    </div>
+  </div>
+
+  <div class="slide_bg" id="concierge" style="display: none;">
+      <div class="image"><img src="http://www.placecage.com/500/100" style="width:100%"></div>
+    <div class="heading_wrap textShadow">
+        <h1>LAVISHLY - TAILORED</h1>
+          <h4>GET YOUR PERSONALISED EXPERIENCE RIGHT AT YOUR DOOR-STEP NOW</h4>
+      </div>
+  </div>
+
+  <div class="slide_bg" id="essential" style="display: none; opacity: 1;">
+      <div class="image"><img src="http://fillmurray.com/500/100" style="width:100%"></div>
+    <div class="heading_wrap textShadow">
+        <h1>CONFIDENTIALITY &amp; PRIVACY POLICY</h1>
+          <h4>YOUR CLANDESTINE MEETINGS ARE UTMOST IMPORTANT TO US</h4>
+      </div>
+  </div>
+
+  <div class="slide_bg" id="member" style="display:none;">
+      <div class="image"><img src="http://placekitten.com/510/100" style="width:100%"></div>
+    <div class="heading_wrap textShadow">
+        <h1>LET US SERVE YOU LIKE A VIP</h1>
+          <h4>PRIORITIZE YOUR EXPERIENCE WITH US NOW</h4>
+      </div>
+  </div>
+
+  <div class="slide_bg" id="contact" style="display: none; opacity: 1;">
+      <div class="image"><img src="http://placekitten.com/550/100" style="width: 100%"></div>
+    <div class="heading_wrap textShadow">
+        <h1>Shop Now</h1>
+          <h4>Reservation at a click</h4>
+      </div>
+  </div>
+
+  <nav class="hidden-xs nav_home visible-lg visible-md">
+    <ul>
+      <li class="folio_nav"><a href="/" id="folio_btn">Folio</a>
+      </li>
+      <li class="concierge"><a href="/" id="concierge_btn">Concierge</a>
+      </li>
+      <li class="essential_nav"><a href="/" id="essential_btn">Essential</a>
+      </li>
+      <li class="member_nav"><a href="/" id="member_btn">Member</a>
+      </li>
+      <li class=" contact_nav"><a href="/products" id="contact_btn">Shop</a>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+<!-- Core Scripts -->
+<script>
+  $('#folio_btn').bind("mouseenter", function()
+  {
+    $('#logo_home').hide();
+    $('.logo_sm , #folio').stop(true).fadeIn(500);
+  });
+  $('#folio_btn').bind("mouseleave", function()
+  {
+    $('.logo_sm, #folio').hide();
+    $('#logo_home').stop(true).fadeIn(500);
+  });
+
+  $('#concierge_btn').bind("mouseenter", function()
+  {
+    $('#logo_home').hide();
+    $('.logo_sm , #concierge').stop(true).fadeIn(500);
+  });
+  $('#concierge_btn').bind("mouseleave", function()
+  {
+    $('.logo_sm, #concierge').hide();
+    $('#logo_home').stop(true).fadeIn(500);
+  });
+
+  $('#essential_btn').bind("mouseenter", function()
+  {
+    $('#logo_home').hide();
+    $('.logo_sm , #essential').stop(true).fadeIn(500);
+  });
+  $('#essential_btn').bind("mouseleave", function()
+  {
+    $('.logo_sm, #essential').hide();
+    $('#logo_home').stop(true).fadeIn(500);
+  });
+
+  $('#member_btn').bind("mouseenter", function()
+  {
+    $('#logo_home').hide();
+    $('.logo_sm , #member').stop(true).fadeIn(500);
+  });
+  $('#member_btn').bind("mouseleave", function()
+  {
+    $('.logo_sm, #member').hide();
+    $('#logo_home').stop(true).fadeIn(500);
+  });
+
+  $('#contact_btn').bind("mouseenter", function()
+  {
+    $('#logo_home').hide();
+    $('.logo_sm , #contact').stop(true).fadeIn(500);
+  });
+  $('#contact_btn').bind("mouseleave", function()
+  {
+    $('.logo_sm, #contact').hide();
+    $('#logo_home').stop(true).fadeIn(500);
+  });
+</script>
+<!-- Additional Functionality Scripts -->
+

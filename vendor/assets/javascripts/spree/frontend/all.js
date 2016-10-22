@@ -8,3 +8,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require spree/frontend .
+//= require spree/frontend/spree_auth
